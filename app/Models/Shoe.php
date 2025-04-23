@@ -16,12 +16,13 @@ class Shoe extends Model
     protected $fillable = [
         'name', //air jordan flying
         'slug', //domain.com/air-jordan-flying
-        'brand_id',
-        'category_id',
-        'size_id',
+        'thumbnail',
+        'about',
         'price',
-        'description',
-        'image',
+        'stock',
+        'is_popular',
+        'category_id',
+        'brand_id',
     ];
 
     public function setNameAttribute($value)
