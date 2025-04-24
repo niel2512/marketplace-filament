@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 class Shoe extends Model
 {
     use HasFactory, SoftDeletes;
-
+    protected $table = 'shoes';
     protected $fillable = [
         'name', //air jordan flying
         'slug', //domain.com/air-jordan-flying
@@ -33,12 +33,12 @@ class Shoe extends Model
 
     public function brand(): BelongsTo
     {
-        return $this->belongsTo(Brand::class, 'brand_id');
+        return $this->belongsTo(Brand::class);
     }
     
     public function category(): BelongsTo
     {
-        return $this->belongsTo(Category::class, 'category_id');
+        return $this->belongsTo(Category::class);
     }
 
     public function photos(): HasMany
