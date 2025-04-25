@@ -16,7 +16,7 @@ class ProductTransaction extends Model
         'name',
         'phone',
         'email',
-        'booking_trx_id',
+        'booking_tx_id',
         'city',
         'post_code',
         'address',
@@ -38,7 +38,7 @@ class ProductTransaction extends Model
             $randomString = $prefix . mt_rand(1000, 9999); // prefix + 4 angka random (SS-1234)
         //cek apakah trx_id sudah ada di database
         // Jika sudah ada, ulangi proses hingga mendapatkan trx_id yang unik
-        } while (self::where('booking_trx_id', $randomString)->exists()); 
+        } while (self::where('booking_tx_id', $randomString)->exists()); 
     
         // Jika belum ada, kembalikan trx_id yang unik
         return $randomString; //(SS-1235)
