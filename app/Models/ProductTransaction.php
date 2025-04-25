@@ -31,7 +31,7 @@ class ProductTransaction extends Model
         'proof',
     ];
 
-    public static function generateUniqueTrxId(): string
+    public static function generateUniqueTxId(): string
     {
         $prefix = 'SS-';
         do {
