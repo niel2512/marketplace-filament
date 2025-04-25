@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\PromoCodeResource\Pages;
 use App\Filament\Resources\PromoCodeResource\RelationManagers;
 use App\Models\PromoCode;
+use FFI;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -24,6 +25,14 @@ class PromoCodeResource extends Resource
         return $form
             ->schema([
                 //
+                Forms\Components\TextInput::make('code')
+                ->required()
+                ->maxLength(255),
+
+                Forms\Components\TextInput::make('discount_amount')
+                ->required()
+                ->numeric()
+                ->prefix('IDR'),
             ]);
     }
 
@@ -32,6 +41,9 @@ class PromoCodeResource extends Resource
         return $table
             ->columns([
                 //
+                Tables\Columns\TextColumn::make('code')
+                ->label('Kode Promo')
+                ->searchable(),
             ])
             ->filters([
                 //

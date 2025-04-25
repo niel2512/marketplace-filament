@@ -129,7 +129,7 @@ class ProductTransactionResource extends Resource
 
                         Forms\Components\TextInput::make('discount_amount')
                         ->required()
-                        // ->readOnly()
+                        ->readOnly()
                         ->numeric()
                         ->prefix('Rp'),
                     ]),
